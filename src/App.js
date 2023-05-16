@@ -19,6 +19,13 @@ function App() {
   function back() {
     setKaydir(kaydir === 0 ? images.length - 1 : kaydir - 1);
   }
+  const kay = (image, index) =>
+  kaydir === index && (
+    <div key={image} className="kaydir">
+      <img src={image} alt="images" />
+    </div>
+  )
+
 
   return (
     <div>
@@ -36,14 +43,18 @@ function App() {
     
     </div>
     
-        {images.map(
+        {
+        
+        images.map(kay)
+        
+        /* {images.map(
           (image, index) =>
             kaydir === index && (
               <div key={image} className="kaydir">
                 <img src={image} alt="images" />
               </div>
             )
-        )}
+        )} */}
       </div>
    
 
